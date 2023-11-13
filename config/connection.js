@@ -1,12 +1,9 @@
-const { connect, connection } = require('mongoose');
 
-const connectionString =
-  process.env.MONGODB_URI || 'mongodb://localhost:27017/socialMediaDB';
+const mongoose = require('mongoose');
 
-connect(connectionString);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialMediaDB');
 
-module.exports = connection;
-
+module.exports = mongoose.connection;
 
 
 

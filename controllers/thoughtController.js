@@ -69,7 +69,7 @@ const ThoughtController = {
             {$addToSet: {reactions: req.body}},
             {runValidators: true, new: true}
         );
-        thought ? res.json(thought) : res.status(404).json({message: notFound});
+        thought ? res.json(thought) : res.status(404).json({message: 'not found'});
     } catch (e) {
         res.status(500).json(e);
     }
@@ -84,7 +84,7 @@ const ThoughtController = {
             {runValidators: true, new: true}
         );
 
-        thought ? res.json(thought) : res.status(404).json({message: notFound});
+        thought ? res.json(thought) : res.status(404).json({message: 'not found'});
     } catch (e) {
         res.status(500).json(e);
     }
